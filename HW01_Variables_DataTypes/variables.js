@@ -13,7 +13,7 @@ let maxNumber = Math.max(priceApple, priceMango, priceLemon),
     isSumFloorEven = (Math.floor(totalSum) % 2) ? false : true,
     sumRest500 = Math.trunc((500-totalSum) * 100)/100,
     averageValue = totalSum / 3,
-    discount = Math.trunc(Math.random() * 100),
+    discount = Math.trunc(Math.random() * 100) + 1,
     discountSum = Math.round(totalSum * discount) / 100,
     pureRevenue = Math.round(((totalSum / 2) - discountSum) * 100) / 100;
 	
