@@ -20,8 +20,8 @@ let maxNumber = Math.max(priceApple, priceMango, priceLemon),
 // Advanced Level
 let consoleStr = webStr = "";
 
-webStr = `Максимальна ціна: ${maxNumber} грн.\<br/\>
-Мінімальна ціна: ${minNumber} грн.\<br/\>
+webStr = `Максимальне число: ${maxNumber}.\<br/\>
+Мінімальне число: ${minNumber}.\<br/\>
 Загальна сума: ${totalSum} грн.\<br/\>
 Сума цілих чисел без копійок, що округлена в меншу сторону: ${priceWithoutCopeeks} грн.\<br/\>
 Сума товарів, округлена до сотень: ${sumRound100} грн.\<br/\>
