@@ -20,12 +20,12 @@ let maxNumber = Math.max(priceApple, priceMango, priceLemon),
 // Advanced Level
 let consoleStr = webStr = "";
 
-webStr = `Максимальне число: ${maxNumber}.\<br/\>
-Мінімальне число: ${minNumber}.\<br/\>
-Загальна сума: ${totalSum}.\<br/\>
-Сума цілих чисел без копійок, що округлена в меншу сторону: ${priceWithoutCopeeks}.\<br/\>
-Сума товарів, округлена до сотень: ${sumRound100}.\<br/\>
-Сума товарів, округлена в меншу сторону: ${totalSumFloor}. Це булеве парне? ${isSumFloorEven}.\<br/\>
+webStr = `Максимальна ціна: ${maxNumber} грн.\<br/\>
+Мінімальна ціна: ${minNumber} грн.\<br/\>
+Загальна сума: ${totalSum} грн.\<br/\>
+Сума цілих чисел без копійок, що округлена в меншу сторону: ${priceWithoutCopeeks} грн.\<br/\>
+Сума товарів, округлена до сотень: ${sumRound100} грн.\<br/\>
+Сума товарів, округлена в меншу сторону: ${totalSumFloor} грн. Це парне число? ${isSumFloorEven}.\<br/\>
 Здача від 500 грн. без округлення: ${sumRest500} грн.\<br/\>
 Середнє значення ціни: ${averageValue.toFixed(2)} грн.\<br/\>
 Ваша знижка складає ${discount}%, що є еквівалентом ${discountSum} грн.\<br/\>
