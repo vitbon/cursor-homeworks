@@ -32,7 +32,7 @@ webStr = `Максимальне число: ${maxNumber}.\<br/\>
 Ваша знижка складає ${discount}%, що є еквівалентом ${discountSum} грн.\<br/\>
 Чистий прибуток: ${Math.round(totalSum / 2 * 100) / 100} - ${discountSum} = ${pureRevenue} грн.\<br/\>`;
 
-consoleStr = webStr.split('<br/\>').join('');
+consoleStr = webStr.split('\<br/\>').join('');
 
 // вивід на веб-сторінку та консоль
 document.writeln(webStr);
