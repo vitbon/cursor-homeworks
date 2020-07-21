@@ -4,12 +4,9 @@ function enterCorrectNumber(text) {
   
   do {
     number = +prompt(text);
-    correctInput = !(Number.isInteger(number) && !Number.isNaN(number));
-    
-    if (correctInput) window.alert("Некоректне введення цілого числа. Спробуйте ще раз!");
-    
+    correctInput = !(Number.isInteger(number) && !Number.isNaN(number));    
+    if (correctInput) window.alert("Некоректне введення цілого числа. Спробуйте ще раз!");    
   } while (correctInput);
-
   return number;
 }
 
@@ -20,10 +17,8 @@ let outputStr = "";
 do {
   userNumberN = enterCorrectNumber("Введіть ціле число N");
   userNumberM = enterCorrectNumber("Введіть ціле число M");
-  
   isNMcorrect = (userNumberN >= userNumberM);
   if (isNMcorrect) window.alert("N > M. Повторіть спробу, число N повинне бути меншим за M.");
-
 } while (isNMcorrect);
 
 isNeedSkipEven = confirm(`Чи потрібно пропускати парні числа?\nYES/OK – потрібно, NO/Cancel – не потрібно.`);
@@ -35,8 +30,7 @@ for (let counter = userNumberN; counter <= userNumberM; counter++) {
 
 outputStr = `Користувач ввів такі значення: N = ${userNumberN}, M = ${userNumberM}.\<br\>
 Пропускати парні = ${isNeedSkipEven}. \<br\>
-Сума чисел від N до M = ${totalSum}.
-`;
+Сума чисел від N до M = ${totalSum}.`;
   
 document.writeln(outputStr);
 console.log(outputStr.split('\<br\>').join(''));
