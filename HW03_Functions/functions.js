@@ -68,7 +68,7 @@ document.writeln('toUpperName("  вОлОдИмиР ") -> ' + toUpperName("  в�
 document.writeln('Завдання №5. Повернути випадкове ціле число в діапазоні від N до M.' + '\<br\>');
 document.writeln('getRandomNumber(3, 15) -> ' + getRandomNumber(3, 15) + "\<br\>\<br\>");
 
-document.writeln('Завдання №7. Конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH.' + '\<br\>');
+document.writeln('Завдання №7. Конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH.' + '\<br\> ');
 document.writeln('convertCurrency("3400.40UAH") -> ' + convertCurrency("3400.40UAH") + '\<br\>');
 document.writeln('convertCurrency("120$") -> ' + convertCurrency("120$") + '\<br\>');
 document.writeln('convertCurrency("532.80CHR") -> ' + convertCurrency("532.80CHR") + '\<br\>\<br\>');
