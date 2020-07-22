@@ -59,6 +59,20 @@ function isPalyndrom(sentence) {
   return status;
 } 
 
+// Завдання №11
+function deleteDuplicateLetter(words){
+  const str = words.trim().toLowerCase();
+  let outStr = "";
+  let char;
+  let j = 0;
+  
+  do {
+    char = str[j];
+    if (str.indexOf(char) === str.lastIndexOf(char)) outStr += char;
+  } while (str.length-1 >= ++j)
+  return outStr;
+}
+
 document.writeln('Завдання №1. Отримати число та вивести найбільшу цифру в цьому числі.' + '\<br\>');
 document.writeln('getMaxDigit(3.1416) -> ' + getMaxDigit(3.1416) + "\<br\>\<br\>");
 
@@ -78,3 +92,6 @@ document.writeln('deleteLetters("a", " BlaBlaCAR is your Super car") -> ' + dele
 
 document.writeln('Завдання №10. Перевірка речення на паліндром.' + '\<br\>');
 document.writeln('isPalyndrom(" Аргентина манит   негра   ") -> ' + isPalyndrom(" Аргентина манит   негра   ") + "\<br\>\<br\>");
+
+document.writeln('Завдання №11. Видалити з речення букви, які зустрічаються більше 1 разу.' + '\<br\>');
+document.writeln('deleteDuplicateLetter(" Бісквіт  був дуже  ніжним ") -> ' + deleteDuplicateLetter(" Бісквіт  був дуже  ніжним ") + "\<br\>\<br\>");
