@@ -7,11 +7,12 @@ function getRandomArray(length, min, max) {
   return arr;
 }
 
-const checkInt = numbers => numbers.filter(el => { if(el%1 === 0) return el; });
+const checkInt = numbers => numbers.filter(el => el%1 === 0);
 
 // 2. Функція getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів.
 function getModa(...numbers) {
   let arrSort = [];
+  let arrOut = [];
   let modaIdx = 0;
   for (i=0; i<numbers.length; i++) arrSort.push([numbers[i], 0]);
   for (i=0; i<numbers.length; i++) {
@@ -19,8 +20,18 @@ function getModa(...numbers) {
       if (arrSort[i][0] === arrSort[j][0]) arrSort[i][1]++;
     }
   }
-  for (let i=0; i<numbers.length; i++) if (arrSort[i][1] > modaIdx) modaIdx=i;
-  return arrSort[modaIdx][0];
+  // Шукаємо полімодність: сортуємо в порядку зростання мод.
+  arrSort.sort((a,b) => b[1] - a[1]);                 
+  const max = arrSort[0][1];
+  // залишаємо всі можливі моди, видаляючи всі інші елементи
+  i=0;
+  do {                                                            
+    if (arrSort[i][1] === max) arrOut.push(arrSort[i][0].toString());
+  } while (++i < arrSort.length)
+  // залишаємо лише унікальні моди та сортуємо їх
+  arrSort = arrOut.filter((item, pos, arr) => arr.indexOf(item) === pos)
+                  .sort((a, b) => a-b);    
+  return arrSort;
 }
 
 // 3. Функція getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів.
@@ -81,12 +92,15 @@ const dataHW2 = [1, -2, 3, -4, -5, 6];
 const dataHW3 = "Commander";
 const dataHW3_2 = "Live";
 const dataHW4 = "Google";
-const dataHW5 = "Are you fucking kidding? Holy bitche's shit! Dirty pussy.";
+const dataHW5 = "Are you fucking kidding? Holy bitch's shit! Dirty pussy.";
+
 
 const dataInt = checkInt(getRandomArray(LENGTH, MIN, MAX));
 console.log(`Завдання 1. Масив випадкових цілих чисел = [${dataInt}].`);
 const moda = getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
 console.log(`Завдання 2. Мода [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = ${moda}.`);
+const moda2 = getModa(5, 11, 54, 11, 5, 43, 2, 54, 2, 10, 11, 54, 2);
+console.log(`Завдання 2. Мода [5, 11, 54, 11, 5, 43, 2, 54, 2, 10, 11, 54, 2] = ${moda2}.`);
 const average = getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
 console.log(`Завдання 3. Середнє арифметичне [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = ${average}.`);
 const mediana = getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
@@ -104,6 +118,18 @@ console.log(`Завдання 9. Розіб'ємо фразу на 3 букви 
 const divByThree2 = divideByThree(dataHW3_2);
 console.log(`Завдання 9. Розіб'ємо фразу на 3 букви [${dataHW3_2}] = [${divByThree2}].`);
 
+
+// 10. Функція generateCombinations(word), яка видасть всі можливі перестановки (унікальні, без повторень) букв в слові.
+// function generateCombinations(word) {
+//   let arrOut = "";
+//   let arrUniq = word.concat()
+//                     .toLowerCase()
+//                     .split("");
+//   arrUniq = arrUniq.filter((item, idx) => idx === arrUniq.indexOf(item));
+
+//   console.log(relocate("abcd"));
+// }
+
 // const combinat = generateCombinations(dataHW4);
 // console.log(`Завдання 10. Перестановки букв в слові [${dataHW4}] = [${combinat}].`);
 // function relocate(elem) { 
@@ -118,17 +144,6 @@ console.log(`Завдання 9. Розіб'ємо фразу на 3 букви 
 //     str = str.slice(j, elem.length-1) + str.slice(j, elem.length-1) + str.slice(i,elem.length-2);
 //   }
 //   return final; 
-// }
-
-// 10. Функція generateCombinations(word), яка видасть всі можливі перестановки (унікальні, без повторень) букв в слові.
-// function generateCombinations(word) {
-//   let arrOut = "";
-//   let arrUniq = word.concat()
-//                     .toLowerCase()
-//                     .split("");
-//   arrUniq = arrUniq.filter((item, idx) => idx === arrUniq.indexOf(item));
-
-//   console.log(relocate("abcd"));
 // }
 
 // перебір елементів за допомогою рекурсії
