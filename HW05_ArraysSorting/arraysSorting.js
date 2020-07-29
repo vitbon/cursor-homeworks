@@ -10,7 +10,7 @@ function getRandomArray(length, min, max) {
 const checkInt = numbers => numbers.filter(el => { if(el%1 === 0) return el; });
 
 // 2. Функція getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів.
-function getModa(numbers) {
+function getModa(...numbers) {
   let arrSort = [];
   let modaIdx = 0;
   for (i=0; i<numbers.length; i++) arrSort.push([numbers[i], 0]);
@@ -24,12 +24,12 @@ function getModa(numbers) {
 }
 
 // 3. Функція getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів.
-const getAverage = numbers => numbers.reduce((acc, item) => acc += item, 0) / numbers.length;
+const getAverage = (...numbers) => numbers.reduce((acc, item) => acc += item, 0) / numbers.length;
 
 // 4. Функція getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів.
-function getMedian(numbers) {
+function getMedian(...numbers) {
   let mediana;
-  let arrSort = numbers.concat();
+  let arrSort = [...arguments];
   arrSort = arrSort.sort((a, b) => a-b);
   if (arrSort.length%2) mediana = arrSort[(arrSort.length-1)/2];  //непарні
     else mediana = arrSort[arrSort.length/2-1];                   // парні
@@ -37,13 +37,13 @@ function getMedian(numbers) {
 }
 
 // 5. Функція filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
-const filterEvenNumbers = numbers => numbers.filter(item => { if(!(item%2)) return item });
+const filterEvenNumbers = (...numbers) => numbers.filter(item => !(item % 2));
 
 // 6. Функція countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0.
-const countPositiveNumbers = numbers => numbers.filter(item => { if(item>0) return item });
+const countPositiveNumbers = (...numbers) => numbers.filter(item => item > 0);
 
 // 7. Функцію getDividedByFive(...numbers) – яка залишить тільки ті, які діляться на ціло на 5.
-const getDividedByFive = numbers => numbers.filter(item => { if(item%5 === 0) return item });
+const getDividedByFive = (...numbers) => numbers.filter(item => item%5 === 0);
 
 // 8. Функція replaceBadWords(string) – яка розіб'є фразу на слова та замінить погані слова на зірочки (*)
 const replaceBadWords = string => {
@@ -73,23 +73,6 @@ const divideByThree = word => {
   return arrOut.slice(0, arrOut.length-1).split(";");
 }
 
-// перебір елементів за допомогою рекурсії
-function relocate(elem) { 
-  let str = elem.concat();
-  let final = "";
-  let i; 
-  let j;
-  debugger;
-  for (i=0; i>elem.length-2; i++) {
-    for (j=i+1; j>elem.length-1; j++) {
-      final += str + "~";      
-    }
-    str = str.slice(j, elem.length-1) + str.slice(j, elem.length-1) + str.slice(i,elem.length-2);
-  }
-  return final; 
-}
-
-
 const LENGTH = 15;
 const MIN = 1;
 const MAX = 100;
@@ -102,18 +85,18 @@ const dataHW5 = "Are you fucking kidding? Holy bitche's shit! Dirty pussy.";
 
 const dataInt = checkInt(getRandomArray(LENGTH, MIN, MAX));
 console.log(`Завдання 1. Масив випадкових цілих чисел = [${dataInt}].`);
-const moda = getModa(dataHW);
-console.log(`Завдання 2. Мода [${dataHW}] = ${moda}.`);
-const average = getAverage(dataHW);
-console.log(`Завдання 3. Середнє арифметичне [${dataHW}] = ${average}.`);
-const mediana = getMedian(dataHW);
-console.log(`Завдання 4. Медіана [${dataHW}] = ${mediana}.`);
-const evenNumbers = filterEvenNumbers(dataHW);
-console.log(`Завдання 5. Парні числа від [${dataHW}] = [${evenNumbers}].`);
-const positiveNumbers = countPositiveNumbers(dataHW2);
-console.log(`Завдання 6. Числа більші 0 від [${dataHW2}] = [${positiveNumbers}].`);
-const dividedByFive = getDividedByFive(dataHW);
-console.log(`Завдання 7. Числа, які діляться на 5 [${dataHW}] = [${dividedByFive}].`);
+const moda = getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
+console.log(`Завдання 2. Мода [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = ${moda}.`);
+const average = getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
+console.log(`Завдання 3. Середнє арифметичне [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = ${average}.`);
+const mediana = getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
+console.log(`Завдання 4. Медіана [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = ${mediana}.`);
+const evenNumbers = filterEvenNumbers(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
+console.log(`Завдання 5. Парні числа від [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = [${evenNumbers}].`);
+const positiveNumbers = countPositiveNumbers(1, -2, 3, -4, -5, 6);
+console.log(`Завдання 6. Числа більші 0 від [1, -2, 3, -4, -5, 6] = [${positiveNumbers}].`);
+const dividedByFive = getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
+console.log(`Завдання 7. Числа, які діляться на 5 [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = [${dividedByFive}].`);
 const badWords = replaceBadWords(dataHW5);
 console.log(`Завдання 8. Замінюємо нелітературні слова [${dataHW5}] = [${badWords}].`);
 const divByThree = divideByThree(dataHW3);
@@ -146,4 +129,20 @@ console.log(`Завдання 9. Розіб'ємо фразу на 3 букви 
 //   arrUniq = arrUniq.filter((item, idx) => idx === arrUniq.indexOf(item));
 
 //   console.log(relocate("abcd"));
+// }
+
+// перебір елементів за допомогою рекурсії
+// function relocate(elem) { 
+//   let str = elem.concat();
+//   let final = "";
+//   let i; 
+//   let j;
+//   debugger;
+//   for (i=0; i>elem.length-2; i++) {
+//     for (j=i+1; j>elem.length-1; j++) {
+//       final += str + "~";      
+//     }
+//     str = str.slice(j, elem.length-1) + str.slice(j, elem.length-1) + str.slice(i,elem.length-2);
+//   }
+//   return final; 
 // }
