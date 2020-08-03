@@ -109,7 +109,7 @@ console.log(`Завдання 4. Медіана [6, 2, 55, 11, 78, 2, 55, 77, 57
 const evenNumbers = filterEvenNumbers(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
 console.log(`Завдання 5. Парні числа від [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = [${evenNumbers}].`);
 const positiveNumbers = countPositiveNumbers(1, -2, 3, -4, -5, 6);
-console.log(`Завдання 6. Числа більші 0 від [1, -2, 3, -4, -5, 6] = [${positiveNumbers}].`);
+console.log(`Завдання 6. Числа більші 0 від [1, -2, 3, -4, -5, 6] = ${positiveNumbers}.`);
 const dividedByFive = getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2);
 console.log(`Завдання 7. Числа, які діляться на 5 [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] = [${dividedByFive}].`);
 const badWords = replaceBadWords(dataHW5);
