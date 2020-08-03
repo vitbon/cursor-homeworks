@@ -24,24 +24,22 @@ const students = [{
   }
 }];
 
+
+
 // 1. Функція getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента
-function getSubjects(number) {
-  const obj = Object.keys(Object.entries(number)[2][1]);
-  let subjects = [];
-  let final = [];
-  for (let item of obj) {
-    subjects.push(item);
-  }
-  subjects.forEach((item, idx, arr) => {
-    final[idx] = item.charAt(0).toUpperCase() + item.slice(1);
-    final[idx] = final[idx].replace(/_/g, " ");
+function getSubjects(students) {
+  const subj = Object.keys(students.subjects);
+  let finalArray = [];
+  subj.forEach((item, idx) => {
+    finalArray[idx] = item.charAt(0).toUpperCase() + item.slice(1);
+    finalArray[idx] = finalArray[idx].replace(/_/g, " ");
   });
-  return final;
+  return finalArray;
 }
 
 // 2. Функція getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку.
-function getAverageMark(number) {
-  let obj = Object.values(number.subjects);
+function getAverageMark(student) {
+  let obj = Object.values(student.subjects);
   const aggregator = array => array.reduce((acc, item) => acc + ((item instanceof Array) ? aggregator(item) : item), 0);
   let marks = [];
   let marksTotal = 0;
@@ -49,23 +47,24 @@ function getAverageMark(number) {
     marks.push(item);
     marksTotal += item.length;
   }  
-  return (aggregator(marks) / marksTotal).toFixed(2);
+  return parseFloat((aggregator(marks) / marksTotal).toFixed(2));
 }
 
 // 3. Функція getStudentInfo(students[0]) – яка повертає інформацію загального виду по переданому студенту. ПОвинна бути виведена інформація: курс, ім'я, середня оцінка.
-function getStudentInfo(number) {
-  let obj = JSON.parse(JSON.stringify(number));
-  obj.average = getAverageMark(number);
-  delete obj.subjects;
+function getStudentInfo(student) {
+  const obj = {};
+  obj.name = student.name,
+  obj.course = student.course;
+  obj.average = getAverageMark(student);
   return obj;
 }
 
 // 4. Функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку.
 function getStudentsNames(students) {
-  const obj = Object.assign(students);
+  // let obj = Object.assign(students);
   let arrOut = [];
-  for (let item in obj) arrOut.push(obj[item].name);
-  return arrOut.sort((a,b) => b - a);
+  for (let item in students) arrOut.push(students[item].name);
+  return arrOut.sort();
 }
 
 // 5. Функція getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
@@ -94,7 +93,6 @@ function calculateWordLetters(string) {
   });
   return result;
 }
-
 
 console.log(`Завдання 1. getSubjects(students[0]) --> `, getSubjects(students[0]));
 console.log(`Завдання 2. getAverageMark(students[0]) --> `, getAverageMark(students[0]));

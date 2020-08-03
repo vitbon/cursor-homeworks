@@ -1,8 +1,9 @@
 // 1. Функція getRandomArray(length, min, max) – яка повертає масив випадкових цілих чисел.
 function getRandomArray(length, min, max) {
-  let arr = [];
+  const arr = [];
   for (let j=0; j<length; j++) {
-    arr.push(Math.round(Math.random() * (max - min) + min));
+    const randomNumber = Math.round(Math.random() * (max - min) + min);
+    arr.push(randomNumber);
   }
   return arr;
 }
@@ -12,9 +13,9 @@ const checkInt = numbers => numbers.filter(el => el%1 === 0);
 // 2. Функція getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів.
 function getModa(...numbers) {
   let arrSort = [];
-  let arrOut = [];
-  let modaIdx = 0;
-  for (i=0; i<numbers.length; i++) arrSort.push([numbers[i], 0]);
+  const arrOut = [];
+  numbers.map((indexitem, index) => arrSort.push([numbers[index], 0]))
+  // for (i=0; i<numbers.length; i++) arrSort.push([numbers[i], 0]);
   for (i=0; i<numbers.length; i++) {
     for (let j=0; j<numbers.length; j++) {
       if (arrSort[i][0] === arrSort[j][0]) arrSort[i][1]++;
@@ -40,18 +41,18 @@ const getAverage = (...numbers) => numbers.reduce((acc, item) => acc += item, 0)
 // 4. Функція getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів.
 function getMedian(...numbers) {
   let mediana;
-  let arrSort = [...arguments];
-  arrSort = arrSort.sort((a, b) => a-b);
+  const arrSort = numbers.sort((a, b) => a-b);
   if (arrSort.length%2) mediana = arrSort[(arrSort.length-1)/2];  //непарні
     else mediana = arrSort[arrSort.length/2-1];                   // парні
   return mediana;
 }
 
+
 // 5. Функція filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 const filterEvenNumbers = (...numbers) => numbers.filter(item => !(item % 2));
 
 // 6. Функція countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0.
-const countPositiveNumbers = (...numbers) => numbers.filter(item => item > 0);
+const countPositiveNumbers = (...numbers) => numbers.filter(item => item > 0).length;
 
 // 7. Функцію getDividedByFive(...numbers) – яка залишить тільки ті, які діляться на ціло на 5.
 const getDividedByFive = (...numbers) => numbers.filter(item => item%5 === 0);
