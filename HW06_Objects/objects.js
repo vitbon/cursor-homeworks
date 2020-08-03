@@ -99,4 +99,4 @@ console.log(`Завдання 2. getAverageMark(students[0]) --> `, getAverageMa
 console.log(`Завдання 3. getStudentInfo(students[0]) --> `, getStudentInfo(students[0]));
 console.log(`Завдання 4. getStudentsNames(students) --> `, getStudentsNames(students));
 console.log(`Завдання 5. getBestStudent(students) --> `, getBestStudent(students));
-console.log(`Завдання 5. calculateWordLetters("ТеСт") --> `, calculateWordLetters("ТеСт"));
+console.log(`Завдання 6. calculateWordLetters("ТеСт") --> `, calculateWordLetters("ТеСт"));
