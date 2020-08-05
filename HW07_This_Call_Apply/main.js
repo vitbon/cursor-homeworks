@@ -34,12 +34,14 @@ function getMySalary(country) {
     const MIN_SALARY = 1500;
     const MAX_SALARY = 2000;
     const outObject = {};
-
-    const salary = random(MIN_SALARY, MAX_SALARY);
-    outObject.salary = salary;
-    outObject.taxes = parseMoney(salary * country.tax);
-    outObject.profit = salary - outObject.taxes;
-    console.log(outObject);
+    
+    setInterval(function() {
+        const salary = random(MIN_SALARY, MAX_SALARY);
+        outObject.salary = salary;
+        outObject.taxes = parseMoney(salary * country.tax);
+        outObject.profit = salary - outObject.taxes;
+        console.log(outObject);
+    }, 10000);
 }
 
 console.log(`Завдання 1. getMyTaxes(salary) --> getMyTaxes.call(ukraine, 2000) = `, getMyTaxes.call(ukraine, 2000));
@@ -52,14 +54,4 @@ console.log(`\t\t\tgetTotalTaxes.call(ukraine) = `, getTotalTaxes.call(ukraine))
 console.log(`\t\t\tgetTotalTaxes.call(latvia) = `, getTotalTaxes.call(latvia));
 console.log(`\t\t\tgetTotalTaxes.call(litva) = `, getTotalTaxes.call(litva));
 console.log(`Завдання 4. Функція getMySalary(country) – яка пише в консоль об'єкт: { salary: number, taxes: number, profit: number } кожні 10 секунд.`);
-
-setInterval(function() {
-    const randomCountry = random(MIN_COUNTRY, MAX_COUNTRY);
-    let realCountry;
-    switch (randomCountry) {
-        case 0: realCountry = ukraine; break;
-        case 1: realCountry = latvia; break;
-        default: realCountry = litva;
-    }
-    getMySalary(realCountry);
-}, 10000);
+getMySalary(ukraine);
