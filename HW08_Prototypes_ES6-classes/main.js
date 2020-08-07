@@ -1,7 +1,4 @@
 class Student {
-    static _estimations;
-    static _isPresent;
-    
     constructor(university, course, fullName) {
         this.university = university;
         this.course = course;
@@ -81,7 +78,6 @@ console.log("");
 
 // Advanced Level
 const tabelBudget = [5, 4, 4, 5, 3, 4, 5];
-// const tabelBudget = [3, 3, 4, 2, 3, 4, 5];
 const studentKyiv = new BudgetStudent(1400, "Київський політехнічний інститут", 3, "Федорчук Михайло Володимирович");
 console.log("--- Advanced Level ---");
 console.log('Створюємо клас BudgetStudent: const studentKyiv = new BudgetStudent(1400, "Київський політехнічний інститут", 3, "Федорчук Михайло Володимирович")');
