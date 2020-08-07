@@ -27,7 +27,7 @@ class Student {
     }
 
     getAverageMark() {
-        return this._estimations.reduce((acc, item) => (acc + item), 0) / this._estimations.length;
+        return this._estimations.reduce((acc, item) => acc + item, 0) / this._estimations.length;
     }
 
     dismiss() {
@@ -51,7 +51,7 @@ class BudgetStudent extends Student {
             console.log(`Студент ${this.fullName} був виключений. Однак в нашій країні за все можна домовитися, зверніться в деканат :)`);
             return null;
         }
-        if (this._estimations.reduce((acc, item) => acc + item, 0) / this._estimations.length >= 4) {
+        if (this.getAverageMark() >= 4) {
             console.log(`Студент ${this.fullName} отримав ${this.scholarship} грн. стипендії.`);
             return this.scholarship;
         } else {
