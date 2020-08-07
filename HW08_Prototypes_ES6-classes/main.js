@@ -1,12 +1,12 @@
 class Student {
     static _estimations;
-    static _present;
+    static _isPresent;
     
     constructor(university, course, fullName) {
         this.university = university;
         this.course = course;
         this.fullName = fullName;
-        this._present = 1;
+        this._isPresent = true;
         this._estimations = [];
     }
 
@@ -15,12 +15,12 @@ class Student {
     }
 
     get marks() {
-        if (this._present) return this._estimations
+        if (this._isPresent) return this._estimations
             else return null;
     }
 
     set marks(value) {
-        if (this._present) {
+        if (this._isPresent) {
             this._estimations.push(value);
             return this.marks;
         } else return null;
@@ -31,11 +31,11 @@ class Student {
     }
 
     dismiss() {
-        this._present = 0;
+        this._isPresent = false;
     }
 
     recover() {
-        this._present = 1;
+        this._isPresent = true;
     }
 
 };
@@ -47,11 +47,17 @@ class BudgetStudent extends Student {
     }
 
     getScholarship() {
-        if (this._present && 
-            this._estimations.reduce((acc, item) => acc + item, 0) / this._estimations.length >= 4) {
+        if (!this._isPresent) {
+            console.log(`Студент ${this.fullName} був виключений. Однак в нашій країні за все можна домовитися, зверніться в деканат :)`);
+            return null;
+        }
+        if (this._estimations.reduce((acc, item) => acc + item, 0) / this._estimations.length >= 4) {
             console.log(`Студент ${this.fullName} отримав ${this.scholarship} грн. стипендії.`);
             return this.scholarship;
-        } else return null;
+        } else {
+            console.log(`Студент ${this.fullName} має середній бал менше 4, стипендія проходить повз. Поталанить наступного разу :) `);    
+            return null;
+          }
     }
 }
 
@@ -67,12 +73,15 @@ console.log(`Bиводимо всі оцінки: `, studentOdesa.marks);
 console.log(`Середній бал ${studentOdesa.fullName}: ${studentOdesa.getAverageMark()}`);
 console.log(`"Виключаємо" ${studentOdesa.fullName} методом studentOdesa.dismiss()`);
 studentOdesa.dismiss();
+studentOdesa.marks = 4
+console.log(`Пробуємо додати оцінку "4". Виводимо всі оцінки: `, studentOdesa.marks, ". Нічого не змінилося");
 console.log(`"Включаємо" ${studentOdesa.fullName} методом studentOdesa.recover()}`);
 studentOdesa.recover();
 console.log("");
 
 // Advanced Level
 const tabelBudget = [5, 4, 4, 5, 3, 4, 5];
+// const tabelBudget = [3, 3, 4, 2, 3, 4, 5];
 const studentKyiv = new BudgetStudent(1400, "Київський політехнічний інститут", 3, "Федорчук Михайло Володимирович");
 console.log("--- Advanced Level ---");
 console.log('Створюємо клас BudgetStudent: const studentKyiv = new BudgetStudent(1400, "Київський політехнічний інститут", 3, "Федорчук Михайло Володимирович")');
