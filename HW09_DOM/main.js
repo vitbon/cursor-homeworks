@@ -1,6 +1,7 @@
 const ROW = 5;
 const MIN_HEX = 0x0;
 const MAX_HEX = 0xffffff;
+const TIME = 1400;
 
 function getRndHEX() { 
   return "#"+(Number(Math.round(Math.random() * (MAX_HEX - MIN_HEX) + MIN_HEX)).toString(16)); 
@@ -22,20 +23,23 @@ function generateBlocks(block, cls, id) {
 }
 
 generateBlocks("block_A", "chess", "a");
+generateBlocks("block_C", "chess_ani", "c");
 
 // Advanced Level
-function generateBlocksInterval(id) {
+function generateBlocksInterval(id, id2, time) {
   setInterval(function() {
     for (let i=0; i<ROW; i++)
       for (let j=0; j<ROW; j++) {
         let idElement = document.getElementById(`${id}${i}${j}`);
-        idElement.style.backgroundColor = getRndHEX();        
+        let idElement2 = document.getElementById(`${id2}${i}${j}`);
+        const rnd = getRndHEX();
+        idElement.style.backgroundColor = rnd;
+        idElement2.style.backgroundColor = rnd;        
       }
-  }, 1000);
-}
+    }, time);
+  }
 
-generateBlocksInterval("a");
-
+generateBlocksInterval("a", "c", TIME);  
 
 /*
 Зродіть 25 квадратів розміру 50х50 пікселів кожен, зафарбовані у випадковий колір. Квадрати мають розташовуватись по 5 в ряд.
@@ -43,28 +47,4 @@ generateBlocksInterval("a");
 
 Advanced зробіть так, щоб квадрати змінювали колір раз на секунду.
 Щоб квадрати з'явились на сторінці та почали змінюватись, необхідно викликати функцію generateBlocksInterval(); Приклад виконаного ДЗ на відео
-
-generateBlocksFlash("c");
-
-function generateBlocksFlash(id) {
-  const oldState = {};
-  for (let i=0; i<ROW; i++)
-    for (let j=0; j<ROW; j++) {
-      let idElement = document.getElementById(`${id}${i}${j}`);
-      oldState[`${id}${i}${j}`] = idElement;
-      idElement.style.animation()
-      
-    }  
-  
-@keyframes example {
-  from { background-color: red; }
-  to   { background-color: yellow; }
-}  
-  
-.chess {
-  animation-name: example`PPPPPPPPP`;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
 */
