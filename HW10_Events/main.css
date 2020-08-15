@@ -38,9 +38,9 @@ h1 {
 }
 
 .btn {
-  height: 80px;
-  width: 80px;
-  margin: 12px;
+  height: 100px;
+  width: 100px;
+  margin: 20px;
   padding: 4px;
   color: #ffe5aa;
   text-align: center;
@@ -68,17 +68,18 @@ h1 {
 }
 
 .letter {
-  margin-top: 8px;
-  line-height: 200%;
+  margin-top: 14px;
+  line-height: 190%;
   color: #ffe5aa;
 }
 
 kbd {
   font-family: monospace;
   display: block;
-  font-size: 54px;
+  font-size: 70px;
 }
 
 span {
   display: block;
+  font-size: 24px;
 }
