@@ -19,8 +19,8 @@
   display: inline-block;
 }
 
-#block_B {  
-  height: 256px;
+#block_B {
+  height: 250px;
   width: 150px;
   display: inline-block;
 }
@@ -39,6 +39,5 @@
   margin: -2px;
   border: 1px solid white;
   display: inline-block;
-  transition-property: background-color;
-  transition-duration: 1.4s;
+  transition: 1.4s;
 }

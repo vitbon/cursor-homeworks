@@ -1,7 +1,7 @@
 const ROW = 5;
 const MIN_HEX = 0x0;
 const MAX_HEX = 0xffffff;
-const TIME = 1400;
+const TIME = 1200;
 
 function getRndHEX() { 
   return "#"+(Number(Math.round(Math.random() * (MAX_HEX - MIN_HEX) + MIN_HEX)).toString(16)); 
