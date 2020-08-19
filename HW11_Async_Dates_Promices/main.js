@@ -38,16 +38,20 @@ function generateSpeech() {
 }
 
 function writeText(event) {
-  document.getElementById(`player`).play();
+  const numberBtnID = document.getElementById("number_btn");
+  numberBtnID.innerHTML = ` Вперед у світле майбутнє! `;
   const numbers = parseInt(document.getElementById("number").value);
   const promise = getRandomChinese(numbers);
   promise.then(() => {
+    document.getElementById(`player`).play();
     const textID = document.getElementById("china_text");
     textID.innerHTML = `Партія сказала: &nbsp;<span>&nbsp;${chinaStr}&nbsp;</span>&nbsp; за ${diffDate} мсек.`;
     const translateID = document.getElementById("translate");
     translateID.innerHTML = `Переклад: <pre>&nbsp;&nbsp;${generateSpeech()}&nbsp;&nbsp;</pre>`;
   }).catch((message) => {
     console.log(message);
+    const numberBtnID = document.getElementById("number_btn");
+    numberBtnID.innerHTML = `Розкуркулимо! Треба 2...15!`;
   });
 }
 
