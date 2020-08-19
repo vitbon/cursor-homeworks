@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  color: #ffffff;
+  text-shadow: 0 0 30px #280000ff, 0 0 10px #000000ff;
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-weight: normal;
+  text-shadow: 0 0 30px #280000ff, 0 0 10px #000000ff;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: normal;
+  text-shadow: 0 0 30px #280000ff, 0 0 10px #000000ff;
+}
+
+#container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("media/china.jpg");
+  background-size: cover;
+}
+
+.main {
+  height: 95vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main_rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_columns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#number {
+  height: 58px;
+  width: 100px;
+  margin: 0 15px;
+  font-size: 2.1rem;
+  font-weight: bold;
+  color: #000;
+  border: 1px solid white;
+  background-color: #ffea96;
+  text-align: center;
+  opacity: 0.9;
+}
+
+#number:hover, input#number:active {
+  border: 1px solid #ffc800;
+}
+
+#number_btn {
+  height: 60px;
+  width: 480px;
+  margin: 0 15px;
+  font-size: 2.1rem;
+  text-align: center;
+  color: #cd0000;
+  background-color: #ffea96;
+  border: 2px solid white;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+#number_btn:hover {
+  color: white;
+  background-color: #d20000;
+  border: 2px solid #ffea96;
+}
+
+span {
+  height: 100px;
+  font-size: 3rem;
+  background-color: white;
+  color: #e92626;
+  text-shadow: none;
+}
+
+pre {
+  height: 37px;
+  font-size: 1.5rem;
+  background-color: white;
+  color: #e20000;
+  margin-top: 10px;
+  opacity: 0.8;
+  display: block;
+  text-shadow: none;
+}
+
+audio {
+  width: 400px;
+  height: 20px;
+  opacity: 50%;
+}
