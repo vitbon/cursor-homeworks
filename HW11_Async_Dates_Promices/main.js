@@ -27,7 +27,7 @@ function getRandomChinese(length) {
 
 const comSpeech = ["COVID-19 не уханські пролетарії винайшли, це все – прояви буржуазних американців!",
   "Aкція: подай документи на вступ до піонерів сьогодні і вже завтра співатимеш 'Інтернаціонал'!",
-  "Здай друга-куркуля партії і безкоштовні путівки на 20 років до ГУЛАГу вам обом забезпечені!",
+  "Здай партії друга-куркуля і безкоштовні путівки на 20 років до ГУЛАГу вам обом забезпечені!",
   "Подарунок від Мао Цзедуна: збірка творів Маркса і Енгельса. Давай свою адресу 'Нової Пошти'!",
   "Ти – записався добровольцем в комуністи? Партія і великий Мао чекають на твоє рішення!",
   "Вступив до комсомолу – добровільно-примусово запрошуємо на суботник, де отримаєш талон на рис!",
@@ -50,7 +50,7 @@ function writeText(event) {
     const textID = document.getElementById("china_text");
     textID.innerHTML = `Партія сказала: &nbsp;<span>&nbsp;${chinaStr}&nbsp;</span>&nbsp; за ${diffDate} мсек.`;
     const translateID = document.getElementById("translate");
-    translateID.innerHTML = `Переклад: <pre>&nbsp;&nbsp;${generateSpeech()}&nbsp;&nbsp;</pre>`;
+    translateID.innerHTML = `Переклад тексту китайської партії: <pre>&nbsp;&nbsp;${generateSpeech()}&nbsp;&nbsp;</pre>`;
   }).catch((message) => {
     console.log(message);
     const numberBtnID = document.getElementById("number_btn");
