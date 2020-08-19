@@ -68,7 +68,7 @@ h3 {
   opacity: 0.9;
 }
 
-#number:hover, input#number:active {
+#number:hover, #number:active {
   border: 1px solid #ffc800;
 }
 
