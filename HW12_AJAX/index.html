@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Homework #12. AJAX.</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600;700;800;900&family=Teko:wght@400;600;700&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+  
+<body>
+  <div id="container">
+    <div class="main">
+      <a href="index.html"><img src="img/star-wars_logo.png" alt="Star Wars's Logo"></a>
+      <!-- <p>&nbsp;</p><p>&nbsp;</p> -->
+      <div class="main_columns">
+        <div>
+          <h2>Characters (task #1, #4)</h2>
+          <div class="main_columns">
+            <label>Film:   
+              <input id="chars" type="number" name="name" value="2" min="1" max="6">
+            </label> 
+            <button id="chars_btn">Get Characters</button>
+          </div>
+        </div>
+        <div style="margin: 0 30px">
+          <h2>Planets (task #2, #3)</h2>
+          <div class="main_columns">
+            <button id="planets_btn">Get Planets</button>
+            <button id="planets-back_btn" class="planets-FB_btn">back</button>
+            <button id="planets-next_btn" class="planets-FB_btn">next</button>
+          </div>
+        </div>
+      </div>
+      <p>&nbsp;</p>
+      <div id="terminal">
+
+      </div>
+    </div>
+  </div>
+  <audio id="player" controls>
+    <source src="media/StarWars_epic.mp3" >
+  </audio>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

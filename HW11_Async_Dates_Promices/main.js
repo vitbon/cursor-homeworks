@@ -32,7 +32,7 @@ const comSpeech = ["COVID-19 не уханські пролетарії вина
   "Ти – записався добровольцем в комуністи? Партія і великий Мао чекають на твоє рішення!",
   "Вступив до комсомолу – добровільно-примусово запрошуємо на суботник, де отримаєш талон на рис!",
   "Хай тремтять пануючі класи перед комуністичною революцією. Пролетарі всіх країн, єднайтеся!",
-  "Бережіться від проникнення західної ідеології та свідомо не допускайте впливу буржуазних думок!"
+  "Бережіться від проникнення західної ідеології та не допускайте впливу капіталістичних думок!"
 ]
 
 function generateSpeech() {
@@ -50,7 +50,7 @@ function writeText(event) {
     const textID = document.getElementById("china_text");
     textID.innerHTML = `Партія сказала: &nbsp;<span>&nbsp;${chinaStr}&nbsp;</span>&nbsp; за ${diffDate} мсек.`;
     const translateID = document.getElementById("translate");
-    translateID.innerHTML = `Переклад тексту китайської партії: <pre>&nbsp;&nbsp;${generateSpeech()}&nbsp;&nbsp;</pre>`;
+    translateID.innerHTML = `Переклад китайського тексту: <pre>&nbsp;&nbsp;${generateSpeech()}&nbsp;&nbsp;</pre>`;
   }).catch((message) => {
     console.log(message);
     const numberBtnID = document.getElementById("number_btn");
@@ -59,7 +59,10 @@ function writeText(event) {
 }
 
 const numberBtn = document.getElementById("number_btn");
+const number = document.getElementById("number");
 numberBtn.addEventListener("click", writeText);
+number.addEventListener("click" || "focus" || "onfocus", () => numberBtn.innerHTML = `Вперед у світле майбутнє!`);
+
 
 /*
 Створіть функцію, яка повертає проміс getRandomChinese(length). Функція працює таким чином:

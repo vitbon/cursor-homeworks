@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Saira', sans-serif;
+  font-family: 'Teko', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Play', sans-serif;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url("img/2fighter.jpg");
+  background-size: cover;  
+}
+
+@keyframes blink {
+  0%, 100% {
+    background: linear-gradient(45deg, #ac0050, #001aff);
+  }
+  50% {
+    background: linear-gradient(45deg, #001aff, #ac0050);
+  }
+}
+
+h2 {
+  font-size: 1.45rem;
+  background-color: rgb(146, 242, 255);
+  color: #000153;
+  text-shadow: none;
+  margin: 10px;
+  padding: 0 15px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: normal;
+  text-shadow: 0 0 30px #280000ff, 0 0 10px #000000ff;
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+audio {
+  position: fixed;
+  bottom: 0px;
+  right: auto;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 20px;
+  opacity: 50%;
+}
+
+.main {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+.main_rows {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main_columns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#chars {
+  height: 34px;
+  width: 60px;
+  margin: 5px 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  border: 2px solid rgb(146, 242, 255);
+  background-color: #fff;
+  text-align: center;
+  opacity: 0.9;
+}
+
+#chars:hover, #chars:active {
+  border: 2px solid #2c99ff;
+}
+
+#chars_btn {
+  height: 38px;
+  margin: 5px 10px;
+  padding: 0 15px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #ac0050;
+  border: 2px solid rgb(255, 77, 225);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+#chars_btn:hover {
+  color: white;
+  background-color: #c00f61;
+  border: 2px solid #fff;
+  animation: blink 2s infinite;
+  transition: all 2s;
+}
+
+#planets_btn {
+  height: 38px;
+  margin: 5px 20px 5px 5px;
+  padding: 0 15px;
+  font-size: 1rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ac0050;
+  border: 2px solid rgb(255, 77, 225);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+#planets_btn:hover {
+  color: white;
+  background-color: #c00f61;
+  border: 2px solid #fff;
+} 
+
+.planets-FB_btn {
+  height: 38px;
+  margin: 5px 5px;
+  padding: 0 10px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #ac0050;
+  border: 2px solid rgb(255, 77, 225);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.planets-FB_btn:hover {
+  color: white;
+  background-color: #c00f61;
+  border: 2px solid #fff;
+} 
+
+#terminal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 6vw;
+  
+}
+
+.imgConst {
+  height: 76px;
+  width: 76px;
+}
+
+table, tr, th, td {
+  margin: 0;
+  padding: 0 10px;
+  border-spacing: 0;
+  text-align: left;
+}
+
+th {
+  color: #000153;
+  background: rgb(146, 242, 255);
+ }
+
+td {
+  border: 1px solid rgb(146, 242, 255);
+}
+
+tr:hover {  
+  background: rgb(0, 52, 77);
+}
