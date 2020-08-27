@@ -44,14 +44,29 @@ function renderCharacters(param) {
   let urlAva = '';
   urlAva = `<img src="img/ava/${param.data.name.split(' ').join('_')}.png" class="imgConst" alt="Avatar" onerror="this.src='img/ava/NA-ava.png';"></img>`;
   const urlImg = maleFemale(param.data.gender);
-  outChars.innerHTML += `<tr><td style="width: 50px;">${urlAva}</td>
-                        <td style="width: 200px;">${param.data.name}</td>
-                        <td style="width: 100px;">${param.data.birth_year}</td>
-                        <td style="width: 40px;">${urlImg}</td></tr>`;
+
+  if(terminalID.childElementCount < 2) {
+    for(let j=0; j<2; j++) {
+      const out = document.createElement("table");  
+      out.innerHTML = 
+        `<tr><td style="width: 76px;">Avatar</td>
+        <td style="width: 200px;">Name</td>
+        <td style="width: 100px;">Birth Year</td>
+        <td style="width: 40px;">Sex</td></tr>`;    
+      out.classList.add("thead");
+      terminalID.appendChild(out);
+    }
+  }
+  const out = document.createElement("table");
+  outChars.innerHTML +=
+    `<tr><td style="width: 55px;">${urlAva}</td>
+    <td style="width: 200px;">${param.data.name}</td>
+    <td style="width: 100px;">${param.data.birth_year}</td>
+    <td style="width: 40px;">${urlImg}</td></tr>`;
   terminalID.appendChild(outChars);
 }
 
-function getPlanet(pageNum) {
+function renderPlanet(pageNum) {
   let config = {
     method: 'GET',
     url: SITE_API + `planets/` + wookiee,
@@ -62,11 +77,20 @@ function getPlanet(pageNum) {
   return axios(config)
     .then(item => item.data.results)
     .then(elem => elem.forEach(res => {
-      console.log(res.name);
-      const out = document.createElement("table");  
-      out.innerHTML += `<tr><td style="width: 200px; height: 44px;">${res.name}</td>
+      if(terminalID.childElementCount < 2) {
+        for(let j=0; j<2; j++) {
+          const out = document.createElement("table");  
+          out.innerHTML = `<tr><td style="width: 200px; height: 44px;">Name</td>
+          <td style="width: 200px;">Population</td></tr>`;        
+          out.classList.add("thead");
+          terminalID.appendChild(out);
+        }
+      }
+      const out = document.createElement("table");
+      out.innerHTML = `<tr><td style="width: 200px; height: 44px;">${res.name}</td>
                         <td style="width: 200px;">${res.population}</td></tr>`;
-      terminalID.appendChild(out);  
+      terminalID.appendChild(out);      
+
   })).catch(() => alert('Houston, we have a problem while getting the Planets!'));     
 }
 
@@ -88,29 +112,53 @@ function makePlanets(event) {
   }();
   if(event.currentTarget.id === "planets_btn" || pageOld != currentPage) {
     terminalClear();
-    getPlanet(currentPage*2-1);
-    getPlanet(currentPage*2);
+    renderPlanet(currentPage*2-1);
+    renderPlanet(currentPage*2);
   }
   pageOld = currentPage;
 }
 
-function renderPlanets() {
-  // curPlanet = 0;
-  const out = document.createElement("table");  
-  for(let i=1; i<=40; i++) {
-    out.innerHTML += `<tr><td style="width: 40px;">${i}</td>
-                      <td style="width: 200px;">${arrPlanets[i-1].name}</td></tr>`;
-    terminalID.appendChild(out);  
-  }
+function removeTransition(ev) {
+  if (ev.propertyName !== "transform") return;
+  this.classList.remove("start_ani");
 }
 
+const timerID = setInterval(function() {
+  console.log(startBtn);
+  startBtn.classList.add("start_ani");
+}, 2200);
+
+function playAudio() {
+  audio.currentTime = 0;
+  audio.play();
+}
+
+function finishIntro() {
+  document.getElementById("player").play();
+  document.querySelector(".main").classList.remove("visib_hidden");
+  document.querySelector(".start").classList.add("opacity_0");   
+  (async () => {
+    return await new Promise((resolve, reject) => {
+      setTimeout(() => { 
+        clearInterval(timerID);
+        const startDiv = document.querySelector(".start");
+        document.getElementById("container").removeChild(startDiv);
+        resolve(1)
+      }, 2500);
+    })
+  })();
+}
+
+const audio = new Audio('media/blaster.mp3');
 const film = document.getElementById("chars");
+const startBtn = document.querySelector(".start_button");
+startBtn.addEventListener("transitionend", removeTransition);
+document.querySelector(".start_button").addEventListener("click", finishIntro);
 document.getElementById("chars_btn").addEventListener("click", makeCharacters);
 document.getElementById("planets_btn").addEventListener("click", makePlanets);
 document.getElementById("planets-back_btn").addEventListener("click", makePlanets);
 document.getElementById("planets-next_btn").addEventListener("click", makePlanets);
-
-document.getElementById(`player`).play();
+document.querySelector(".main_columns").addEventListener("click", playAudio);
 
 /*
 https://swapi.dev/documentation – Працювати необхідно з цим API.
@@ -135,4 +183,13 @@ ___5. ADVANCED: Додайте кнопку перекладу на вукийс
 повинен перекластись на мову вуки.
 Для цього достатньо додати до будь-якого запиту: ?format=wookiee.
 При фантазії – можете ще і текст кнопок перекласти :)
+*/
+
+/*
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600;700;800;900&family=Teko:wght@400;600;700&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">  
+
+  font-family: 'Saira', sans-serif;
+  font-family: 'Teko', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Oswald', sans-serif;
 */

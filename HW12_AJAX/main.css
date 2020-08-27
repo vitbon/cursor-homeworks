@@ -1,31 +1,69 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Saira', sans-serif;
-  font-family: 'Teko', sans-serif;
-  font-family: 'Titillium Web', sans-serif;
-
-  font-family: 'Oswald', sans-serif;
   font-family: 'Play', sans-serif;
   font-size: 22px;
-  color: white;
   text-align: center;
 }
 
 body {
+  color: white;
   height: 100vh;
   width: 100%;
   background-image: url("img/2fighter.jpg");
-  background-size: cover;  
+  background-size: cover;
 }
 
-@keyframes blink {
-  0%, 100% {
-    background: linear-gradient(45deg, #ac0050, #001aff);
-  }
-  50% {
-    background: linear-gradient(45deg, #001aff, #ac0050);
-  }
+.visib_hidden { 
+  visibility: hidden; 
+}
+
+.opacity_0 { 
+  opacity: 0;
+}
+
+.start {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  position: fixed;
+  background-image: url("img/StarWars_Entry.jpg");
+  z-index: 2;
+  transition: all 2s ease-in-out;
+}
+
+.start_button {
+  position: relative;
+  padding: 4px 25px;
+  top: 18%;
+  left: auto;
+  right: 1%;
+  width: 100px;
+  height: 46px;
+  text-align: center;
+  color: white;
+  background-color: #a30029;
+  border: 3px solid rgb(253, 124, 156);
+  box-shadow: 0px 0px 1px #ff5f87;
+  transition: all 1s ease-in-out;
+}
+
+.start_button:hover {
+  color: #fff;
+  background-color: #a30029;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+.start_ani {
+  width: 140px;
+  color: white;
+  background-color: #a30051;
+  border: 3px solid #ff90de;
+  box-shadow: 0px 0px 25px #d49fae;
+  transform: scale(1.15);
 }
 
 h2 {
@@ -37,27 +75,20 @@ h2 {
   padding: 0 15px;
 }
 
-h3 {
-  font-size: 1.8rem;
-  color: #ffffff;
-  font-weight: normal;
-  text-shadow: 0 0 30px #280000ff, 0 0 10px #000000ff;
-}
-
 #container {
   height: 100vh;
   width: 100%;
   position: relative;
 }
 
-audio {
+#player {
   position: fixed;
   bottom: 0px;
   right: auto;
   transform: translate(-50%, -50%);
   width: 400px;
   height: 20px;
-  opacity: 50%;
+  opacity: 35%;
 }
 
 .main {  
@@ -115,13 +146,11 @@ audio {
   color: white;
   background-color: #c00f61;
   border: 2px solid #fff;
-  animation: blink 2s infinite;
-  transition: all 2s;
 }
 
 #planets_btn {
   height: 38px;
-  margin: 5px 20px 5px 5px;
+  margin: 5px 20px 5px 10px;
   padding: 0 15px;
   font-size: 1rem;
   text-align: center;
@@ -140,7 +169,7 @@ audio {
 
 .planets-FB_btn {
   height: 38px;
-  margin: 5px 5px;
+  margin: 5px 10px;
   padding: 0 10px;
   font-size: 1rem;
   text-align: center;
@@ -170,21 +199,23 @@ audio {
 }
 
 table, tr, th, td {
-  margin: 0;
-  padding: 0 10px;
+  margin: 0 10px;
   border-spacing: 0;
   text-align: left;
 }
 
-th {
-  color: #000153;
-  background: rgb(146, 242, 255);
- }
-
 td {
+  padding: 0 10px;
   border: 1px solid rgb(146, 242, 255);
 }
 
 tr:hover {  
+  color: rgb(146, 242, 255); 
+  background: rgb(0, 5, 29);
+}
+
+.thead, .head td {  
+  color: rgb(0, 225, 255); 
   background: rgb(0, 52, 77);
+  font-weight: bold;
 }

@@ -71,6 +71,7 @@ h1 {
   margin-top: 14px;
   line-height: 190%;
   color: #ffe5aa;
+  user-select: none;
 }
 
 kbd {
