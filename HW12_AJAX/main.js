@@ -34,7 +34,7 @@ function makeCharacters() {
   pageOld = currentPage = undefined;
   return axios(config)
     .then(res => res.data.characters)
-    .then(hero => hero.forEach(item => axios.get(item + wookiee)
+    .then(hero => hero.forEach(item => axios.get("https:" + item.slice(5) + wookiee)
     .then(elem => renderCharacters(elem)))
    ).catch(() => alert("Houston, we have a problem while getting the Characters"));
 }
