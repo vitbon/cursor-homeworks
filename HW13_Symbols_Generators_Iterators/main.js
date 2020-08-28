@@ -56,6 +56,7 @@ uniqBtn.addEventListener("click", pressUniqBtn);
 fontText.innerHTML = fontLetters;
 fontDownBtn.addEventListener("click", () => pressFontBtn("down"));
 fontUpBtn.addEventListener("click", () => pressFontBtn("up"));
+pressFontBtn();
 
 /*
 Завдання 1:
