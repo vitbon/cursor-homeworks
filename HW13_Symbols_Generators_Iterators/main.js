@@ -43,7 +43,7 @@ function pressFontBtn(event) {
   fontText.innerHTML = `${fontSize} px: ` + fontLetters;
 }
 
-const fontLetters = "з'їж ще цих французських булочок та випий філіжанку львівської кави.";
+const fontLetters = "з'їж ще цих французьких булочок та випий філіжанку львівської кави.";
 const idGenerator = createIdGenerator();
 const fontGenerator = newFontGenerator(14);
 const uniqText = document.getElementById('uniq_text');
