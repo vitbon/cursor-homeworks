@@ -9,20 +9,23 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: "source-map",
   devServer: {
     contentBase: './',
     hot: true
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].styles.css",
+    }),
     new HtmlWebpackPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'], // use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: ['style-loader', 'css-loader'], // use: [MiniCssExtractPlugin.loader, 'css-loader'], // 
       },
       {
         test: /\.(png|jpeg|jpg|svg|gif)$/i,

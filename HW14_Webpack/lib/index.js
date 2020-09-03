@@ -1,20 +1,20 @@
-import axios from '../node_modules/axios/dist/axios.js';
+import axios from 'axios';
 import priceWithoutCopeeks from './hw01_variables.js';
 import suma from './hw02_conditions';
-import {toUpperName, fnDeleteDupLetter} from './hw03_functions.js';
+import { toUpperName, fnDeleteDupLetter } from './hw03_functions.js';
 import getRandom from './hw04_arrays.js';
 import divideByThree from './hw05_arraysSorting.js';
 import calculateWordLetters from './hw06_objects.js'; // ???
-import {random, ukraine} from './hw07_this.js';
-import {Student, BudgetStudent} from './hw08_classes.js';
-import {getRndHEX, generateBlocks, generateBlocksInterval} from './hw09_DOM.js';
+
+import { random, ukraine } from './hw07_this.js';
+import { Student, BudgetStudent } from './hw08_classes.js';
+import { getRndHEX, generateBlocks, generateBlocksInterval } from './hw09_DOM.js';
 import './hw09_DOM.css';
 import playSoundKbd from './hw10_events.js';
 import getRandomChinese from './hw11_promices';
-import {SITE_API, terminalID, getFilm, maleFemale, makeCharacters, renderCharacters} from './hw12_ajax';
+import { SITE_API, terminalID, getFilm, maleFemale, makeCharacters, renderCharacters } from './hw12_ajax';
 import './hw12_ajax.css';
 import createIdGenerator from './hw13_generators';
-
 const br = "\<br/\>";
 const pTag = document.createElement('p');
 pTag.innerHTML = `HW01: Сума цілих чисел без копійок priceWithoutCopeeks, що округлена в меншу сторону: ${priceWithoutCopeeks} грн.${br}`;
@@ -25,30 +25,25 @@ pTag.innerHTML += `HW05: divideByThree("WeAreLearningReact") = ${divideByThree("
 pTag.innerHTML += `HW06: calculateWordLetters("cacao") = ${calculateWordLetters("cacao")} ${br}`;
 pTag.innerHTML += `HW07: random(2, 10) = ${random(2, 10)}${br}`;
 const studentKyiv = new BudgetStudent(1400, "Київський політехнічний інститут", 3, "Федорчук Михайло Володимирович");
-pTag.innerHTML += `HW08: studentKyiv.fullName = ${studentKyiv.fullName} ${br}`;
-// /hw09_DOM.js
+pTag.innerHTML += `HW08: studentKyiv.fullName = ${studentKyiv.fullName} ${br}`; // /hw09_DOM.js
+
 generateBlocks("block_A", "chess", "a");
 generateBlocks("block_C", "chess_ani", "c");
-generateBlocksInterval("a", "c", 1100); 
+generateBlocksInterval("a", "c", 1100); // hw11
 
-// hw11
-const promise = getRandomChinese(5); 
-  promise.then(message => {
-    console.log(message);
-    pTag.innerHTML += `HW11: Китайські єрогліфи: ${message}${br}`;
-      }).catch(mes => {
-    console.log(mes);
-    });
+const promise = getRandomChinese(5);
+promise.then(message => {
+  console.log(message);
+  pTag.innerHTML += `HW11: Китайські єрогліфи: ${message}${br}`;
+}).catch(mes => {
+  console.log(mes);
+}); // hw13
 
-// hw13
 const idGenerator = createIdGenerator();
 pTag.innerHTML += `HW13: idGenerator.next().value = ${idGenerator.next().value}${br}`;
+document.getElementById("hw_up").appendChild(pTag); // hw12
 
-document.getElementById("hw_up").appendChild(pTag);
-
-// hw12
 makeCharacters();
-
 /*
 Це домашнє завдання не має правильного рішення (!). Ваша задача в цьому завданні – практика з webpack.
 Необхідно створити окремий модуль з кожного вашого домашнього завданнч. Експортуйте функції, які необхідно було зробити у попередніх ДЗ за допомогою export
