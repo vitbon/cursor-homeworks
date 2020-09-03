@@ -1,0 +1,32 @@
+#terminal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 6vw;  
+}
+
+.imgConst {
+  height: 76px;
+  width: 76px;
+}
+
+table, tr, th, td {
+  margin: 0 10px;
+  border-spacing: 0;
+  text-align: left;
+}
+
+td {
+  padding: 0 10px;
+  border: 1px solid rgb(61, 136, 146);
+}
+
+tr:hover {  
+  color: rgb(146, 242, 255); 
+  background: rgb(0, 5, 29);
+}
+
+.thead, .head td {  
+  color: rgb(0, 225, 255); 
+  background: rgb(0, 52, 77);
+  font-weight: bold;
+}

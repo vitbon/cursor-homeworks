@@ -3,7 +3,7 @@
   padding: 0;
   font-family: 'Play', sans-serif;
   font-size: 22px;
-  text-align: center;
+  text-align: left;
 }
 
 #container {
@@ -27,57 +27,4 @@
 
 .main_rows > div {
   margin: 15px 0 10px 0;
-}
-
-#uniq_text {
-  height: 15vh;
-  width: 96%;
-  margin: 0 20px;
-  padding: 6px 10px;
-  color: rgb(140, 255, 130);
-  font-size: 1.6rem;
-  border: 2px solid rgb(0, 43, 9);
-  background-color: #000000;
-  text-align: center;
-  opacity: 0.85;
-}
-
-#uniq_btn {  
-  margin: 10px 15px;
-  padding: 8px 20px;
-  text-align: center;
-  color: rgb(21, 255, 0);
-  background-color: #050505;
-  border: 2px solid rgb(0, 126, 27);
-  cursor: pointer;
-}
-
-#font_text {
-  width: 96%;
-  height: 40vh;
-  margin: 0px 20px;
-  padding: 6px 10px;
-  color: rgb(140, 255, 130);
-  font-size: 14px;
-  border: 2px solid rgb(0, 43, 9);
-  background-color: #000000;
-  text-align: center;
-  opacity: 0.85;
-}
-
-.font_btn {  
-  margin: 10px 15px;
-  padding: 8px 20px;
-  text-align: center;
-  color: rgb(21, 255, 0);
-  background-color: #050505;
-  border: 2px solid rgb(0, 126, 27);
-  cursor: pointer;
-}
-
-.font_btn:hover, #uniq_btn:hover {  
-  color: #000000;
-  background-color: rgb(11, 128, 0);
-  border: 2px solid rgb(21, 255, 0);
-  cursor: pointer;
 }

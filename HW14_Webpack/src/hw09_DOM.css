@@ -1,0 +1,29 @@
+#block_A, #block_C {  
+  height: 256px;
+  width: 270px;
+  margin: 3px 0 0 4px;
+  display: inline-block;
+}
+
+#block_B {
+  height: 250px;
+  width: 150px;
+  display: inline-block;
+}
+
+.chess {
+  height: 50px;
+  width: 50px;
+  margin: -2px;
+  border: 1px solid white;
+  display: inline-block;
+}
+
+.chess_ani {
+  height: 50px;
+  width: 50px;
+  margin: -2px;
+  border: 1px solid white;
+  display: inline-block;
+  transition: 1.4s;
+}

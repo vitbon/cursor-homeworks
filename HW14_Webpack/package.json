@@ -1,0 +1,31 @@
+{
+  "name": "hw14_webpack",
+  "version": "1.0.0",
+  "description": "Cursor's homework",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vitbon/cursor-homeworks/tree/master/HW14_Webpack"
+  },
+  "author": "Vitalii Bondarchuk",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "babel": "^6.23.0",
+    "css-loader": "^4.2.2",
+    "style-loader": "^1.2.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.4.1",
+    "mini-css-extract-plugin": "^0.11.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
