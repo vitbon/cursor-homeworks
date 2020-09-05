@@ -72,8 +72,7 @@
   left: 15px;
   width: 64px;
   height: 64px;
-  border-radius: 50%;
-  background-image: url("");
+  border-radius: 50%;  
   background-color: black;
   background-size: cover;
   position: absolute;
