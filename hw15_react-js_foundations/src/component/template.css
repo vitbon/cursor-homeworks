@@ -14,7 +14,7 @@
   color: white;
   width: 750px;
   height: 435px;
-  background-color: #15202b;
+  background-color: #002e5c;
   margin-bottom: 30px;
   border-radius: 5px;
 }
@@ -34,9 +34,8 @@
 .card__center > img {
   left: 90px;
   height: 312px;
-  width: 645px;
-  /* background-image: url("/img/sw9_ReySabre-laser.jpg"); */
-  background-size: cover;
+  width: 645px;  
+  object-fit: cover;
   border-radius: 15px;
   position: relative;
 }
@@ -57,6 +56,13 @@
 
 .card__footer>span:hover, .card__header__textBox_dw_Arrow:hover {
   opacity: 0.9;
+  user-select: none;
+  cursor: pointer;
+}
+
+.gray>a:hover {
+  opacity: 1;
+  text-decoration: underline;
   user-select: none;
   cursor: pointer;
 }
@@ -112,7 +118,7 @@
 }
 
 .gray {
-  color: #9199ac;
+  opacity: 0.6;
 }
 
 .bold {

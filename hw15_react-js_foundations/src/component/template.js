@@ -1,66 +1,18 @@
 import React from 'react';
 
-const pData = [
-  { 
-    author: {
-      name: "Anakin Skywalker",
-      photo: "./img/skywalker-ava.jpg",
-      nickname: "@anakin-batya",
-      date: "26 mar."
-    },
-    content: "WTF? Who is Ray? Why she is Skywalker? Luke...?",
-    image: "./img/sw9_ReySabre-laser.jpg",
-    footer: {
-      message: 482,
-      reTweet: 146,
-      like: 887
-    }
-  },
-  { 
-    author: {
-      name: "Anakin Skywalker",
-      photo: "./img/sheevPalpatine-ava.jpg",
-      nickname: "@sheva-imperator",
-      date: "03 dec."
-    },
-    content: "That woman could turn any Ewok into a Wookie.", 
-    image: "./img/sw9_PadmeAmidala-pictol.jpg",
-    footer: {
-      message: 321,
-      reTweet: 97,
-      like: 784
-    }
-  },
-  { 
-    author: {
-      name: "Anakin Skywalker",
-      photo: "./img/skywalker-ava.jpg",
-      nickname: "@anakin-batya",
-      date: "26 mar."
-    },
-    content: "WTF? Who is Ray? Why she is Skywalker? Luke...?",
-    image: "./img/sw9_ReySabre-laser.jpg",
-    footer: {
-      message: 321,
-      reTweet: 97,
-      like: 784
-    }
-  }
-];
-
 const Post = (props) => {
   return (
     <div className="card">
 
       <div className="card__header">
         <span className="card__header_avatar">
-          <img src={props.author.photo} />
+          <img src={props.photo} />
         </span>
         <span className="card__header__textBox">
           <div className="card__header__textBox_name">
-            <span className="bold">{props.author.name}</span>
+            <span className="bold">{props.name}</span>
             <img src='./img/star-active.png' className="star-active" />            
-            <span className="gray">{props.author.nickname} • {props.author.date}</span>
+            <span className="gray"><a>{props.nickname}</a> • {props.date}</span>
           </div>       
           <div className="card__header__textBox_status">
             <span>{props.content}</span>
@@ -91,4 +43,4 @@ const Post = (props) => {
   )
 }
 
-export {pData, Post};
+export default Post;
