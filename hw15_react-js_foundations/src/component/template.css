@@ -1,0 +1,120 @@
+
+.bg {
+  background-color: #8a8a8a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {  
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  width: 750px;
+  height: 435px;
+  background-color: #15202b;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.card__header {
+  height: 75px;
+  width: calc(100%-90px);
+  position: relative;
+}
+
+.star-active {
+  padding-left: 6px;
+  padding-right: 10px;
+  vertical-align: -5px;
+}
+
+.card__center > img {
+  left: 90px;
+  height: 312px;
+  width: 645px;
+  /* background-image: url("/img/sw9_ReySabre-laser.jpg"); */
+  background-size: cover;
+  border-radius: 15px;
+  position: relative;
+}
+
+.card__footer {
+  font-size: 16px;
+  padding-top: 4px;
+  padding-left: 90px;
+  vertical-align: text-top;
+  height: 42px;
+  width: calc(100%-90px);
+  position: relative;
+}
+
+.card__footer>span {
+  opacity: 0.5;
+}
+
+.card__footer>span:hover, .card__header__textBox_dw_Arrow:hover {
+  opacity: 0.9;
+  user-select: none;
+  cursor: pointer;
+}
+
+.card__header_avatar > img {  
+  top: 10px;
+  left: 15px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-image: url("");
+  background-color: black;
+  background-size: cover;
+  position: absolute;
+}
+
+.card__header__textBox {
+  padding-top: 15px;
+  left: 90px;
+  width: 600px;
+  height: 75px;
+  position: absolute;
+}
+
+.card__header__textBox_name {
+  min-height: 30px;
+  font-size: 18px;
+  color: white;
+  position: relative;
+}
+
+.card__header__textBox_status {
+  min-height: 30px;
+  font-size: 18px;
+  color: white;
+  position: relative;
+}
+
+.card__header__textBox_dw_Arrow {
+  top: 16px;
+  left: 718px;
+  position: relative;
+  opacity: 60%;
+}
+
+.leftTab {
+  margin-left: 110px;
+}
+
+.icon2text {
+  padding-left: 10px;
+  vertical-align: 6px;
+}
+
+.gray {
+  color: #9199ac;
+}
+
+.bold {
+  font-weight: bold;
+}
