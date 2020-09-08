@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/cursor-homeworks/static/css/main.215bdc97.chunk.css",
-    "main.js": "/cursor-homeworks/static/js/main.86a67f0e.chunk.js",
-    "main.js.map": "/cursor-homeworks/static/js/main.86a67f0e.chunk.js.map",
-    "runtime-main.js": "/cursor-homeworks/static/js/runtime-main.6efce928.js",
-    "runtime-main.js.map": "/cursor-homeworks/static/js/runtime-main.6efce928.js.map",
-    "static/js/2.181a29a6.chunk.js": "/cursor-homeworks/static/js/2.181a29a6.chunk.js",
-    "static/js/2.181a29a6.chunk.js.map": "/cursor-homeworks/static/js/2.181a29a6.chunk.js.map",
-    "index.html": "/cursor-homeworks/index.html",
-    "precache-manifest.56c37496aa9f1d5f06c997c191f70133.js": "/cursor-homeworks/precache-manifest.56c37496aa9f1d5f06c997c191f70133.js",
-    "service-worker.js": "/cursor-homeworks/service-worker.js",
-    "static/css/main.215bdc97.chunk.css.map": "/cursor-homeworks/static/css/main.215bdc97.chunk.css.map",
-    "static/js/2.181a29a6.chunk.js.LICENSE.txt": "/cursor-homeworks/static/js/2.181a29a6.chunk.js.LICENSE.txt"
+    "main.css": "/hw16_react_class/static/css/main.ea7922ce.chunk.css",
+    "main.js": "/hw16_react_class/static/js/main.57351ed8.chunk.js",
+    "main.js.map": "/hw16_react_class/static/js/main.57351ed8.chunk.js.map",
+    "runtime-main.js": "/hw16_react_class/static/js/runtime-main.ff26b51d.js",
+    "runtime-main.js.map": "/hw16_react_class/static/js/runtime-main.ff26b51d.js.map",
+    "static/js/2.3c1cc815.chunk.js": "/hw16_react_class/static/js/2.3c1cc815.chunk.js",
+    "static/js/2.3c1cc815.chunk.js.map": "/hw16_react_class/static/js/2.3c1cc815.chunk.js.map",
+    "index.html": "/hw16_react_class/index.html",
+    "precache-manifest.08c01dd75defbc69eb39573a04b54bae.js": "/hw16_react_class/precache-manifest.08c01dd75defbc69eb39573a04b54bae.js",
+    "service-worker.js": "/hw16_react_class/service-worker.js",
+    "static/css/main.ea7922ce.chunk.css.map": "/hw16_react_class/static/css/main.ea7922ce.chunk.css.map",
+    "static/js/2.3c1cc815.chunk.js.LICENSE.txt": "/hw16_react_class/static/js/2.3c1cc815.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/hw16_react_class/static/media/logo.5d5d9eef.svg",
+    "static/media/pictol.jpg": "/hw16_react_class/static/media/pictol.d6fd5045.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6efce928.js",
-    "static/js/2.181a29a6.chunk.js",
-    "static/css/main.215bdc97.chunk.css",
-    "static/js/main.86a67f0e.chunk.js"
+    "static/js/runtime-main.ff26b51d.js",
+    "static/js/2.3c1cc815.chunk.js",
+    "static/css/main.ea7922ce.chunk.css",
+    "static/js/main.57351ed8.chunk.js"
   ]
 }
