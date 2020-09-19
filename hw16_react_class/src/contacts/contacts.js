@@ -28,7 +28,7 @@ const contactsMock = [{
 }, {
   firstName: "Теодор",
   lastName: "Мотсбес",
-  phone: "+380956319521",
+  phone: "+380678123456",
   gender: "male"
 }, {
   firstName: "Іван",
@@ -75,28 +75,28 @@ export default class Contacts extends Component {
     isUnisex: true
   };
 
-  isMale = () => {
-    this.setState( {isMale: !this.state.isMale});
+  isMale = async() => {
+    await this.setState( {isMale: !this.state.isMale});
     this.filterData();
   };
 
-  isFemale = () => {
-    this.setState({ isFemale: !this.state.isFemale });
+  isFemale = async() => {
+    await this.setState({ isFemale: !this.state.isFemale });
     this.filterData();
   };
 
-  isUnisex = () => {
-    this.setState({ isUnisex: !this.state.isUnisex });
+  isUnisex = async() => {
+    await this.setState({ isUnisex: !this.state.isUnisex });
     this.filterData();
   };
 
-  handleSearchChange = (ev) => {
-    this.setState({search: ev.target.value});
+  handleSearchChange = async (ev) => {
+    await this.setState({search: ev.target.value});
     this.filterData();
   };
 
-  filterData = () => {
-    this.setState(() => {
+  filterData = async() => {
+    await this.setState(() => {
       const searchLwr = this.state.search.toLowerCase();
       const fltr = this.state.contacts.filter(man =>
         ((man.gender === 'male') && this.state.isMale) ||
@@ -105,7 +105,7 @@ export default class Contacts extends Component {
         .filter(item =>
           item.firstName.toLowerCase().includes(searchLwr) ||
           item.lastName.toLowerCase().includes(searchLwr) ||
-          item.phone.toLowerCase().includes(searchLwr) );
+          item.phone.toLowerCase().includes(searchLwr));
       console.log(fltr);
       return {
         filtered: [...fltr],
@@ -121,8 +121,8 @@ export default class Contacts extends Component {
             <input className="search__btn" type="search" placeholder="Search..." value={this.state.search}
                    onChange={this.handleSearchChange}>
             </input>
-            <label className="check" id="man">
-              <input type="checkbox" name="man" onChange={this.isMale} defaultChecked></input>
+            <label className="check" id="man" onChange={this.isMale}>
+              <input type="checkbox" name="man" checked={this.state.isMale}></input>
               👨
             </label>
             <label className="check" id="woman" onChange={this.isFemale}>

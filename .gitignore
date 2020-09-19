@@ -8,10 +8,19 @@
 # testing
 /coverage
 
-# production
+# React and Other
+/cursor-project
+/HW14_Webpack
+/hw15_react-js_foundations
+/hw16_react_class
+/hw17_react_hooks
+/hw18_react_stylization
+/hw19_react_navigation
+
 
 
 # misc
+.idea
 .DS_Store
 .env.local
 .env.development.local

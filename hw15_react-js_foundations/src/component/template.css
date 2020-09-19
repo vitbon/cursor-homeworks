@@ -15,7 +15,7 @@
   width: 750px;
   height: 435px;
   background-color: #002e5c;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border-radius: 5px;
 }
 
@@ -104,7 +104,7 @@
   top: 16px;
   left: 718px;
   position: relative;
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .leftTab {

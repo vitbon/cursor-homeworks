@@ -5,6 +5,7 @@
   font-size: 18px;
   color: white;
   text-align: center;
+  outline: none;
 }
 
 h1 {
@@ -56,20 +57,20 @@ h3 {
 }
 
 #number {
-  height: 58px;
+  height: 56px;
   width: 100px;
   margin: 0 15px;
   font-size: 2.1rem;
   font-weight: bold;
   color: #000;
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: #ffea96;
   text-align: center;
   opacity: 0.9;
 }
 
 #number:hover, #number:active {
-  border: 1px solid #ffc800;
+  border: 2px solid #ffc800;
 }
 
 #number_btn {

@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import pic from './pictol.jpg';
 import './App.css';
 
 function App() {
