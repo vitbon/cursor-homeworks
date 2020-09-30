@@ -6,7 +6,7 @@ import './component/template.css';
 const pData = [
   { 
     name: "Anakin Skywalker",
-    photo: "./img/skywalker-ava.jpg",
+    photo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/74/Anakin-Jedi.jpg/220px-Anakin-Jedi.jpg",
     nickname: "@anakin-batya",
     date: "26 mar.",    
     content: "WTF? Who is Ray? Why she is Skywalker? Luke...?",

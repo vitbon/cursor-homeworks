@@ -1,36 +1,58 @@
-function createIdGenerator() {
-  let id = 0;
-  return {
-    next() {
-      id++;
-      const symbol = Symbol(id);
-      return {
-        value: symbol.description,
-        done: false
-      };
-    }
-  };
+function* createIdGenerator () {
+  for (let i = 1;; i++){
+    yield i;
+  }
 }
 
-function newFontGenerator(init = 14) {
-  let font = init;
-  return {
-    next(upDown) {
-      switch (upDown) {
-        case "down":
-          if (font >= 4) font -= 2;
-          break;
-        case "up":
-          font += 2;
-          break;
-      }
-      return {
-        value: font,
-        done: false
-      };
+// --- Previous Version ---
+// function createIdGenerator() {
+//   let id = 0;
+//   return {
+//     next() {
+//       id++;
+//       const symbol = Symbol(id);
+//       return {
+//         value: symbol.description,
+//         done: false
+//       };
+//     }
+//   };
+// }
+
+function* newFontGenerator(size) {
+  while (true) {
+    let action = yield size;
+    switch (action) {
+      case "down":
+        if (size >= 4) size -= 2;
+        break;
+      case "up":
+        size += 2;
+        break;
     }
   }
 }
+
+// --- Previous Version ---
+// function newFontGenerator(init = 14) {
+//   let font = init;
+//   return {
+//     next(upDown) {
+//       switch (upDown) {
+//         case "down":
+//           if (font >= 4) font -= 2;
+//           break;
+//         case "up":
+//           font += 2;
+//           break;
+//       }
+//       return {
+//         value: font,
+//         done: false
+//       };
+//     }
+//   }
+// }
 
 function pressUniqBtn() {
   const separator = uniqText.innerHTML ? ", " : "";
