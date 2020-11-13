@@ -1,13 +1,21 @@
 HW#01 "Variables and Data Types"
+
 Pages: https://vitbon.github.io/cursor-homeworks/
+
 Github: https://github.com/vitbon/cursor-homeworks/tree/master/HW01_Variables_DataTypes
 
+
 HW#02 "Conditions and Circles"
+
 Pages: https://vitbon.github.io/cursor-homeworks/HW02_Conditions_Circles/index.html
+
 Github: https://github.com/vitbon/cursor-homeworks/tree/master/HW02_Conditions_Circles
 
+
 HW#03 "Functions"
+
 Pages: https://vitbon.github.io/cursor-homeworks/HW03_Functions
+
 Git: https://github.com/vitbon/cursor-homeworks/tree/master/HW03_Functions
 
 HW#04 "Arrays"
