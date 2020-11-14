@@ -1,7 +1,5 @@
 HW#01 "Variables and Data Types"
-
 Pages: https://vitbon.github.io/cursor-homeworks/
-
 Github: https://github.com/vitbon/cursor-homeworks/tree/master/HW01_Variables_DataTypes
 
 HW#02 "Conditions and Circles"
