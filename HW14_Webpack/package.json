@@ -15,7 +15,7 @@
   "author": "Vitalii Bondarchuk",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "babel": "^6.23.0",
     "css-loader": "^4.2.2",
     "style-loader": "^1.2.1"
